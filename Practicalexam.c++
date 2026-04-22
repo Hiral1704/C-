@@ -1,5 +1,83 @@
 #include <iostream>
 using namespace std;
+//Question 1
+class Movie {
+public:
+    string title;
+    string genre;
+    int releaseYear;
+
+    Movie(string t, string g, int y) {
+        title = t;
+        genre = g;
+        releaseYear = y;
+    }
+};
+
+int main() {
+    Movie movies[3] = {
+        Movie("3 Idiots", "Comedy/Drama", 2009),
+        Movie("Hera Pheri", "Comedy", 2000),
+        Movie("Golmaal", "Comedy", 2006),
+    };
+
+
+    for (int i = 0; i < 3; i++) {
+        cout << "Title: " << movies[i].title << endl;
+        cout << "Genre: " << movies[i].genre << endl;
+        cout << "Release Year: " << movies[i].releaseYear << endl;
+        
+    }
+
+    return 0;
+}
+#include <iostream>
+using namespace std;
+//Question 2
+class BankAccount {
+private:
+    double balance;   
+public:
+    BankAccount(double initialBalance) {
+        balance = initialBalance;
+    }
+    
+    void credit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+            cout << "Amount credited: " << amount << endl;
+        } else {
+            cout << "Invalid amount!" << endl;
+        }
+    }
+
+    void debit(double amount) {
+        if (amount > 0 && amount <= balance) {
+            balance -= amount;
+            cout << "Amount debited: " << amount << endl;
+        } else {
+            cout << "Insufficient balance or invalid amount!" << endl;
+        }
+    }
+
+    void displayBalance() {
+        cout << "Current Balance: " << balance << endl;
+    }
+};
+
+int main() {
+    BankAccount acc(1000);  
+
+    acc.displayBalance();
+    acc.credit(500);
+    acc.debit(300);
+    acc.displayBalance();
+
+    return 0;
+}
+
+#include <iostream>
+using namespace std;
 //Que 3
 class Vehicle {
 public:
